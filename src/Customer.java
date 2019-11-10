@@ -1,3 +1,6 @@
+import java.util.Vector;
+import java.util.Enumeration;
+
 class Customer {
     private String _name;
     private Vector _rentals = new Vector();
@@ -49,10 +52,11 @@ class Customer {
             result += "\t" + each.getMovie().getTitle()+ "\t" +
             String.valueOf(thisAmount) + "\n";
             totalAmount += thisAmount;
-    }
-    //add footer lines
-    result +=  "Amount owed is " + String.valueOf(totalAmount) + "\n";
-    result += "You earned " + String.valueOf(frequentRenterPoints) +
+        }
+        //add footer lines
+        result +=  "Amount owed is " + String.valueOf(totalAmount) + "\n";
+        result += "You earned " + String.valueOf(frequentRenterPoints) +
              " frequent renter points";
-    return result;
+        return result;
+    }
 }
