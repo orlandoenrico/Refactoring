@@ -16,23 +16,23 @@ class Customer {
         return _name;
     };
 
-    public double amountFor(Rental rental) {
+    public double amountFor(Rental aRental) {
         double result = 0;
 
         //determine amounts for rental line
-        switch (rental.getMovie().getPriceCode()) {
+        switch (aRental.getMovie().getPriceCode()) {
         case Movie.REGULAR:
             result += 2;
-            if (rental.getDaysRented() > 2)
-                result += (rental.getDaysRented() - 2) * 1.5;
+            if (aRental.getDaysRented() > 2)
+                result += (aRental.getDaysRented() - 2) * 1.5;
             break;
         case Movie.NEW_RELEASE:
-            result += rental.getDaysRented() * 3;
+            result += aRental.getDaysRented() * 3;
             break;
         case Movie.CHILDRENS:
             result += 1.5;
-            if (rental.getDaysRented() > 3)
-                result += (rental.getDaysRented() - 3) * 1.5;
+            if (aRental.getDaysRented() > 3)
+                result += (aRental.getDaysRented() - 3) * 1.5;
             break;
         }
 
